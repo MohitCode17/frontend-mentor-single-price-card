@@ -1,0 +1,180 @@
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --lightcyan: hsl(179, 62%, 50%);
+  --brightYellow: hsl(71, 73%, 54%);
+  --lightGray: hsl(204, 43%, 93%);
+  --listColor: hsl(179, 62%, 80%);
+  --priceColor: hsl(179, 62%, 55%);
+  --grayBlue: hsl(218, 22%, 67%);
+
+  --shadow: 1.5px 7px 10px 1px rgba(0, 0, 0, 0.1);
+
+  --fontKarla: "Karla", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--fontKarla);
+  font-size: 16px;
+  background-color: var(--lightGray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 768px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: "a a" "b c";
+  background-color: #fff;
+  margin: 1rem;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.box {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.join {
+  grid-area: a;
+  background-color: #fff;
+}
+
+.join h2 {
+  color: var(--cyan);
+}
+
+.join h3 {
+  color: var(--brightYellow);
+  margin: 1.2rem 0 0.7rem 0;
+  font-weight: 700;
+}
+
+.join p {
+  color: var(--grayBlue);
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+
+.subscription {
+  grid-area: b;
+  background-color: var(--cyan);
+}
+
+.why-us {
+  grid-area: c;
+  background-color: var(--lightcyan);
+}
+
+.subscription h3,
+.why-us h3 {
+  color: var(--lightGray);
+  margin-bottom: 1.2rem;
+}
+
+.why-us ul li {
+  margin-bottom: 0.3rem;
+  font-size: 15px;
+  color: var(--listColor);
+  font-weight: 600;
+}
+
+.subscription p.price {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--priceColor);
+  margin-bottom: 0.5rem;
+}
+
+.subscription .price span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subscription p {
+  color: #f2f2f2;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: block;
+  background-color: var(--brightYellow);
+  color: #fff;
+  border-radius: 6px;
+  text-align: center;
+  padding: 0.8rem 0;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+
+footer p {
+  font-size: 14px;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+footer p a {
+  color: teal;
+  font-weight: 600;
+}
+
+footer p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 425px) {
+  .wrapper {
+    grid-template-columns: 100%;
+    grid-template-areas: "a" "b" "c";
+  }
+
+  .join {
+    grid-area: a;
+  }
+
+  .join h2 {
+    font-size: 22px;
+  }
+
+  .join h3 {
+    font-size: 18px;
+  }
+
+  .join p {
+    line-height: 1.7rem;
+  }
+
+  .subscription {
+    grid-area: b;
+  }
+
+  .why-us {
+    grid-area: c;
+  }
+}
